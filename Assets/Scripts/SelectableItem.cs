@@ -1,12 +1,21 @@
 using System;
 using UnityEngine;
 
+public enum ItemType
+{
+  Square,
+  Circle,
+  Triangle
+}
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class SelectableItem : MonoBehaviour
 {
   // https://github.com/Habrador/Unity-Programming-Patterns#3-observer
   public static event Action<SelectableItem> ItemSelectEvent = delegate { };
   public static event Action<SelectableItem> ItemDeselectEvent = delegate { };
+
+  public ItemType itemType;
 
   bool isSelected = false;
   SpriteRenderer spriteRenderer;
