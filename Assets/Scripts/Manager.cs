@@ -24,8 +24,6 @@ public class Manager : MonoBehaviour
   void OnDeselectedItem(SelectableItem selectedItem)
   {
     selectedItems.Remove(selectedItem.GetInstanceID());
-    Debug.Log("Deselected item: " + selectedItem.itemType);
-    Debug.Log("There are " + selectedItems.Count + " selected items now.");
     WriteMessage(selectedItem);
   }
 
